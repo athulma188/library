@@ -7,12 +7,23 @@
           <div class="panel panel-default">
               <div class="panel-heading"><h3>Add Employee</h3></div>
               <div class="panel-body">
-                  <form action="/action_page.php">
+                @foreach($errors->all() as $error)
+                <div class="alert alert-danger">
+                  {{$error}}
+                </div>
+                @endforeach
+                @if(session('success'))
+                  <div class="alert alert-success">
+                    {{session('success')}}
+                  </div>
+                @endif
+                  <form action="/employees/add" method="post" class="form">
+                      {{csrf_field()}}
                       <div class='row'>
                           <div class="col-md-6">
                               <div class="form-group">
                                <label for="name">Name:</label>
-                               <input type="text" class="form-control" id="name" required>
+                               <input name="name" type="text" class="form-control" id="name" required>
                               </div>
 
                               <div class="form-group">
@@ -27,24 +38,24 @@
 
                               <div class="form-group">
                                <label for="salary">Salary:</label>
-                               <input type="number" class="form-control" id="salary" required>
+                               <input name="salary" type="number" class="form-control" id="salary" required>
                               </div>
 
                           </div>
                           <div class="col-md-6">
                               <div class="form-group">
                                <label for="dob">Date of Birth:</label>
-                               <input type="date" name="dob" class="form-control" required>
+                               <input type="date" name="date_of_birth" class="form-control" required>
                               </div>
 
                               <div class="form-group">
                                <label for="email">Email:</label>
-                               <input type="email" class="form-control" id="email" required>
+                               <input type="email" class="form-control" id="email" name="email" required>
                               </div>
 
                               <div class="form-group">
-                               <label for="phone">Phone Number:</label>
-                               <input type="number" class="form-control" id="phone">
+                               <label for="phone_number">Phone Number:</label>
+                               <input type="number" class="form-control" id="phone_number" name="phone_number">
                               </div>
 
                           </div>

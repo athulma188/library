@@ -15,4 +15,23 @@ class MembersController extends Controller
     {
         return view('add_member');
     }
+    public function create(Request $request)
+    {
+      $check = DB::table('Member')->where('email', $request->email)->exists();
+      if ($check)
+      {
+          return redirect()->action('MembersController@add')->withErrors(['Member already exists']);
+      }
+      else
+      {
+          DB::table('Member')->insert(['name'=>$request->name,
+                                      'gender'=>$request->gender,
+                                      'date_of_birth'=>date('Y-m-d',strtotime($request->date_of_birth)),
+                                      'category'=> $request->category,
+                                      'email'=>$request->email,
+                                      'phone_number'=>$request->phone,
+        ]);
+          return redirect()->action('MembersController@add')->withSuccess('Member Added!');
+      }
+    }
 }

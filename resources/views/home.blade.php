@@ -14,8 +14,16 @@
                             <td><a href="/books/add"><button type="button" class="btn btn-success btn-lg">Add Book</button></a></td>
                         </tr>
                         <tr>
+                            <td><a href="/book_category"><button type="button" class="btn btn-success btn-lg">View Book Categories</button></a></td>
+                            <td><a href="/book_category/add"><button type="button" class="btn btn-success btn-lg">Add Book Category</button></a></td>
+                        </tr>
+                        <tr>
                             <td><a href="/members"><button type="button" class="btn btn-success btn-lg">View Members</button></a></td>
                             <td><a href="/members/add"><button type="button" class="btn btn-success btn-lg btn-lg">Add Member</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/member_category"><button type="button" class="btn btn-success btn-lg">View Member Categories</button></a></td>
+                            <td><a href="/member_category/add"><button type="button" class="btn btn-success btn-lg btn-lg">Add Member Category</button></a></td>
                         </tr>
                         <tr>
                             <td><a href="/employees"><button type="button" class="btn btn-success btn-lg">View Employees</button></a></td>
