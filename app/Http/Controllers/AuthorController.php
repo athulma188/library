@@ -28,4 +28,21 @@ class AuthorController extends Controller
             return redirect()->action('AuthorController@add')->withSuccess('Author Added!');
         }
     }
+    public function authored_by()
+    {
+        return view('authored_by');
+    }
+    public function add_authored_by(Request $request)
+    {
+      $check = DB::table('AuthoredBy')->where('author_id', $request->author_id)->where('book_id',$request->book_id)->exists();
+      if ($check)
+      {
+          return redirect()->action('AuthorController@authored_by')->withErrors(['Entry already exists']);
+      }
+      else
+      {
+          DB::table('AuthoredBy')->insert(['author_id'=>$request->author_id, 'book_id'=>$request->book_id]);
+          return redirect()->action('AuthorController@authored_by')->withSuccess('Entry Added!');
+      }
+    }
 }
