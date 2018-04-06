@@ -12,13 +12,13 @@
                           <div class="col-md-6">
                               <div class="form-group">
                                <label for="category">Name:</label>
-                               <input type="text" class="form-control" id="category">
+                               <input type="text" class="form-control" id="category" required>
                               </div>
                           </div>
                           <div class="col-md-6">
                               <div class="form-group">
                                <label for="ref_copies">No of Reference Copies:</label>
-                               <input type="number" class="form-control" id="ref_copies">
+                               <input type="number" class="form-control" id="ref_copies" required>
                               </div>
                           </div>
                       </div>

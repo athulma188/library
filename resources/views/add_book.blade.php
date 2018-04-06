@@ -12,22 +12,22 @@
                           <div class="col-md-6">
                               <div class="form-group">
                                <label for="title">Title:</label>
-                               <input type="text" class="form-control" id="title">
+                               <input type="text" class="form-control" id="title" required>
                               </div>
 
                               <div class="form-group">
                                <label for="isbn">ISBN:</label>
-                               <input type="text" class="form-control" id="isbn">
+                               <input type="text" class="form-control" id="isbn" required>
                               </div>
 
                               <div class="form-group">
                                <label for="publisher">Publisher:</label>
-                               <input type="text" class="form-control" id="publisher">
+                               <input type="text" class="form-control" id="publisher" required>
                               </div>
 
                               <div class="form-group">
                                <label for="category">Category:</label>
-                               <input type="text" class="form-control" id="category">
+                               <input type="text" class="form-control" id="category" required>
                               </div>
 
                               <div class="form-group">
@@ -53,7 +53,7 @@
 
                               <div class="form-group">
                                <label for="copies">No of Copies:</label>
-                               <input type="number" class="form-control" id="copies" min=1>
+                               <input type="number" class="form-control" id="copies" min=1 required>
                               </div>
                           </div>
                       </div>

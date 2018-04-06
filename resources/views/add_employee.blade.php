@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="panel panel-default">
-              <div class="panel-heading"><h3>Add Member</h3></div>
+              <div class="panel-heading"><h3>Add Employee</h3></div>
               <div class="panel-body">
                   <form action="/action_page.php">
                       <div class='row'>
@@ -26,13 +26,10 @@
                               </div>
 
                               <div class="form-group">
-                               <label for="category">Category:</label>
-                               <select name="category" class="form-control" id="category" required>
-                               <option disabled selected value> -- select a category -- </option>
-                               <option>Student</option>
-                               <option>Professor</option>
-                               </select>
+                               <label for="salary">Salary:</label>
+                               <input type="number" class="form-control" id="salary" required>
                               </div>
+
                           </div>
                           <div class="col-md-6">
                               <div class="form-group">
@@ -53,7 +50,7 @@
                           </div>
                       </div>
 
-                      <button type="submit" style="float:right" class="btn btn-default">Add Member</button>
+                      <button type="submit" style="float:right" class="btn btn-default">Add Employee</button>
                   </form>
               </div>
         </div>

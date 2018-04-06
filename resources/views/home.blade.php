@@ -8,14 +8,32 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <table class="table">
+                        <tr>
+                            <td><a href="/books"><button type="button" class="btn btn-success btn-lg">View Books</button></a></td>
+                            <td><a href="/books/add"><button type="button" class="btn btn-success btn-lg">Add Book</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/members"><button type="button" class="btn btn-success btn-lg">View Members</button></a></td>
+                            <td><a href="/members/add"><button type="button" class="btn btn-success btn-lg btn-lg">Add Member</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/employees"><button type="button" class="btn btn-success btn-lg">View Employees</button></a></td>
+                            <td><a href="/employees/add"><button type="button" class="btn btn-success btn-lg">Add Employee</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/departments"><button type="button" class="btn btn-success btn-lg">View Departments</button></a></td>
+                            <td><a href="/departments/add"><button type="button" class="btn btn-success btn-lg">Add Department</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/authors"><button type="button" class="btn btn-success btn-lg">View Authors</button></a></td>
+                            <td><a href="/authors/add"><button type="button" class="btn btn-success btn-lg">Add Author</button></a></td>
+                        </tr>
+                    </table>
 
-                    You are logged in!
+
                 </div>
+
             </div>
         </div>
     </div>
