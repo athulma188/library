@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card" style="opacity:0.85">
+        <div class="col-md-12">
+            <div class="card" style="opacity:0.85;box-shadow:8px 8px 5px rgba(0, 0, 0, .5)">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body" >
@@ -46,6 +46,21 @@
                         </tr>
                         <tr>
                             <td><a href="/authored_by"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Add Authored By </a></td>
+                            <td><a href="/authorized_professors"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">View Authorized Professors </a></td>
+                            <td><a href="/authorized_professors/set"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Set Authorized Professor </a></td>
+                            <td><a href="/book_copy/add"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Add Book Copies </a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/holds"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Holds</a></td>
+                            <td><a href="/holds/add"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Add Hold</a></td>
+                            <td><a href="/holds/issue"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Issue Hold</a></td>
+                            <td><a href="/settle"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Settle Fine</a></td>
+                        </tr>
+                        <tr>
+
+                          <td><a href="/books/return"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Return Book</a></td>
+                          <td><a href="/books/renew"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Renew Book</a></td>
+                          <td><a href="/transactions"  class="btn btn-info  btn-lg" role="button" style="width:100%; ;min-height:70px;border-radius:0">Transactions</a></td>
                         </tr>
                     </table>
 

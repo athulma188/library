@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="panel panel-default">
+          <div class="card">
             @foreach($errors->all() as $error)
             <div class="alert alert-danger">
               {{$error}}
@@ -15,8 +15,8 @@
                 {{session('success')}}
               </div>
             @endif
-              <div class="panel-heading"><h3>Set Authorized Professor</h3></div>
-              <div class="panel-body">
+              <div class="card-heading" align=center><h3>Set Authorized Professor</h3></div>
+              <div class="card-body">
                   <form action="/authorized_professors/set" method="post" class="form">
                     {{csrf_field()}}
                       <div class='row'>

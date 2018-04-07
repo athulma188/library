@@ -15,33 +15,33 @@
                 {{session('success')}}
               </div>
             @endif
-              <div class="card-heading" align=center><h3>Issue Book</h3></div>
+              <div class="card-heading" align=center><h3>Settle Fine</h3></div>
               <div class="card-body">
-                  <form action="/books/issue" method="post" class="form">
+                  <form action="/settle" method="post" class="form">
                     {{csrf_field()}}
                       <div class='row'>
                           <div class="col-md-6">
 
                               <div class="form-group">
-                               <label for="book_id">Book ID:</label>
-                               <input type="number" class="form-control" id="book_id" name="book_id" required>
+                               <label for="issue_id">Issue ID:</label>
+                               <input type="number" class="form-control" id="issue_id" name="issue_id" required>
                               </div>
 
 
                               <div class="form-group">
-                               <label for="member_id">Member ID:</label>
-                               <input type="number" class="form-control" id="member_id" name="member_id" required>
+                               <label for="amount">Amount:</label>
+                               <input type="number" class="form-control" id="amount" name="amount" required>
                               </div>
 
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                             <label for="copy_id">Copy ID:</label>
-                             <input type="number" class="form-control" id="copy_id" name="copy_id" required>
+                             <label for="copy_id">Date:</label>
+                             <input type="date" class="form-control" id="date" name="date" required>
                             </div>
                       </div>
                     </div>
-                      <button type="submit" style="float:right" class="btn btn-default">Issue</button>
+                      <button type="submit" style="float:right" class="btn btn-default">Settle</button>
                   </form>
               </div>
         </div>

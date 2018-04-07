@@ -33,15 +33,30 @@ Route::get('/member_category', 'MemberCategoryController@index')->name('view_mem
 Route::get('/book_category/add', 'BookCategoryController@add')->name('add_book_category');
 Route::get('/member_category/add', 'MemberCategoryController@add')->name('add_member_category');
 Route::get('issued', 'BooksController@issued')->name('issued');
-Route::get('unsettled_fine', 'BooksController@view_unsettled_fine');
-Route::get('settled_fine', 'BooksController@view_settled_fine');
+Route::get('unsettled_fine', 'FineController@view_unsettled_fine');
+Route::get('settled_fine', 'FineController@view_settled_fine');
 Route::get('books/issue', 'BooksController@issue');
 Route::get('authored_by', 'AuthorController@authored_by');
 Route::get('professors', 'DepartmentController@professors');
 Route::get('professors/add', 'DepartmentController@add_professor');
 Route::get('authorized_professors', 'DepartmentController@view_authorized_professors');
 Route::get('authorized_professors/set', function(){ return view('set_authorized_professor');});
+Route::get('/book_copy/add', function(){ return view('add_book_copy');});
+Route::get('/holds', 'HoldController@view_holds');
+Route::get('/transactions', 'TransactionController@index');
 
+Route::get('/books/renew', function(){ return view('renew_book');});
+Route::post('/books/renew', 'BooksController@renew');
+Route::get('/holds/issue', function(){ return view('issue_hold');});
+Route::post('/holds/issue', 'HoldController@issue');
+Route::get('/holds/add', function(){ return view('add_hold');});
+Route::post('/holds/add', 'HoldController@add_hold');
+Route::get('/settle', function(){ return view('settle_fine');});
+Route::post('/settle', 'FineController@settle');
+Route::get('/books/return', function(){ return view('return_book');});
+Route::post('/books/return', 'BooksController@return');
+
+Route::post('/book_copy/add', 'BooksController@add_copy');
 Route::post('authorized_professors/set','DepartmentController@set_authorized_professor');
 Route::post('professors/add', 'DepartmentController@store_professor');
 Route::post('authored_by', 'AuthorController@add_authored_by');

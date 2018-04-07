@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="panel panel-default">
-              <div class="panel-heading"><h3>Add Employee</h3></div>
-              <div class="panel-body">
+          <div class="card">
+              <div class="card-heading" align=center><h3>Add Employee</h3></div>
+              <div class="card-body">
                 @foreach($errors->all() as $error)
                 <div class="alert alert-danger">
                   {{$error}}

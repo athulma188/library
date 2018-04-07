@@ -5,22 +5,26 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
           <div class="card">
-              <div class="card-heading" align=center><h3>Authorized Professors</h3></div>
+              <div class="card-heading" align=center><h3>Holds</h3></div>
               <div class="card-body">
-                <div class="table-bordered" style="background-color:#FFFFFF">
+                <div class="table-bordered">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Department ID</th>
-                            <th>Professor ID</th>
+                            <th>Book ID</th>
+                            <th>Member ID</th>
+                            <th>Hold Date</th>
+                            <th>status</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                         @foreach($profs as $prof)
+                         @foreach($holds as $hold)
                           <tr>
-                              <td> {{$prof->dept_id}} </td>
-                              <td> {{$prof->prof_id}} </td>
+                              <td> {{$hold->book_id}} </td>
+                              <td> {{$hold->member_id}} </td>
+                              <td> {{date('d/m/Y',strtotime($hold->hold_date))}} </td>
+                              <td> {{$hold->status}} </td>
                           </tr>
                          @endforeach
                    </tbody>

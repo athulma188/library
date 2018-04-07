@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
 class MemberCategoryController extends Controller
 {
     public function create(Request $request)
     {
       $check = DB::table('MemberCategory')->where('name', $request->name)->exists();
+      try{
       if ($check)
       {
           return redirect()->action('MemberCategoryController@add')->withErrors(['Category already exists']);
@@ -24,6 +25,11 @@ class MemberCategoryController extends Controller
                                              'per_day_fine'=>$request->perday_fine
                                            ]);
           return redirect()->action('MemberCategoryController@add')->withSuccess('Category Added!');
+      }
+      }
+      catch(QueryException $ex)
+      {
+          return redirect()->back()->withErrors([($ex->getMessage())]);
       }
     }
     public function add()

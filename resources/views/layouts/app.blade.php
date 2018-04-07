@@ -20,9 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body  style="background-image:url('library.jpg');background-size:1366px 768px">
+<body  style="background-image:url({{asset('library.jpg')}});background-size:1366px 768px">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="opacity:0.9">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Library') }}

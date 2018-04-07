@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
 class DepartmentController extends Controller
 {
       public function add()
@@ -41,6 +41,7 @@ class DepartmentController extends Controller
       public function store_professor(Request $request)
       {
           $check = DB::table('Professor')->where('member_id', $request->member_id)->exists();
+          try{
           if ($check)
           {
               return redirect()->action('DepartmentController@add_professor')->withErrors(['Professor already exists']);
@@ -50,16 +51,40 @@ class DepartmentController extends Controller
               DB::table('Professor')->insert(['member_id'=>$request->member_id,'dept_id'=>$request->dept_id]);
               return redirect()->action('DepartmentController@add_professor')->withSuccess('Professor Added!');
           }
+          }
+          catch(QueryException $ex)
+          {
+              return redirect()->back()->withErrors([($ex->getMessage())]);
+          }
+
       }
 
       public function set_authorized_professor(Request $request)
       {
           $check = DB::table('AuthorizedProfessor')->where('dept_id', $request->dept_id)->exists();
+
           if ($check)
-          DB::table('AuthorizedProfessor')->where('dept_id', $request->dept_id)->update(['prof_id'=>$request->prof_id]);
+          {
+              try{
+              DB::table('AuthorizedProfessor')->where('dept_id', $request->dept_id)->update(['prof_id'=>$request->prof_id]);
+              }
+              catch(QueryException $ex)
+              {
+                  return redirect()->back()->withErrors([($ex->getMessage())]);
+              }
+          }
           else
-          DB::table('AuthorizedProfessor')->insert(['prof_id'=>$request->prof_id,'dept_id'=>$request->dept_id]);
-          return redirect()->action('DepartmentController@set_authorized_professor')->withSuccess('Authorized Professor has been set!');
+          {
+              try
+              {
+                  DB::table('AuthorizedProfessor')->insert(['prof_id'=>$request->prof_id,'dept_id'=>$request->dept_id]);
+                  return redirect()->action('DepartmentController@set_authorized_professor')->withSuccess('Authorized Professor has been set!');
+              }
+              catch(QueryException $ex)
+              {
+                  return redirect()->back()->withErrors([($ex->getMessage())]);
+              }
+          }
 
       }
       public function view_authorized_professors()

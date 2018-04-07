@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="panel panel-default">
+          <div class="card">
             @foreach($errors->all() as $error)
             <div class="alert alert-danger">
               {{$error}}
@@ -15,8 +15,8 @@
                 {{session('success')}}
               </div>
             @endif
-              <div class="panel-heading"><h3>Add Member</h3></div>
-              <div class="panel-body">
+              <div class="card-heading" align=center><h3>Add Member</h3></div>
+              <div class="card-body">
                   <form action="/members/add" method="post" class="form">
                     {{csrf_field()}}
                       <div class='row'>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
 class EmployeesController extends Controller
 {
     public function index()
@@ -18,6 +18,7 @@ class EmployeesController extends Controller
     public function create(Request $request)
     {
       $check = DB::table('Employee')->where('email', $request->email)->exists();
+      try{
       if ($check)
       {
           return redirect()->action('EmployeesController@add')->withErrors(['Employee already exists']);
@@ -32,6 +33,11 @@ class EmployeesController extends Controller
                                       'phone_number'=>$request->phone_number,
         ]);
           return redirect()->action('EmployeesController@add')->withSuccess('Employee Added!');
+      }
+      }
+      catch(QueryException $ex)
+      {
+          return redirect()->back()->withErrors([($ex->getMessage())]);
       }
     }
 }

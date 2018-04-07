@@ -1,4 +1,4 @@
-@extends('layouts.app')
+  @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -15,20 +15,20 @@
                 {{session('success')}}
               </div>
             @endif
-              <div class="card-heading" align=center><h3>Add Department</h3></div>
+              <div class="card-heading" align=center><h3>Renew Book</h3></div>
               <div class="card-body">
-                  <form action="/departments/add" class="form" method="post">
+                  <form action="/books/renew" method="post" class="form">
                     {{csrf_field()}}
                       <div class='row'>
-                          <div class="col-md-12">
+                          <div class="col-md-6">
+
                               <div class="form-group">
-                               <label for="name">Department Name:</label>
-                               <input type="text" class="form-control" id="name" name="name" required>
+                               <label for="issue_id">Issue ID:</label>
+                               <input type="number" class="form-control" id="issue_id" name="issue_id" required>
                               </div>
                           </div>
-                      </div>
-
-                      <button type="submit" style="float:right" class="btn btn-default">Add Department</button>
+                    </div>
+                      <button type="submit" style="float:right" class="btn btn-default">Renew</button>
                   </form>
               </div>
         </div>
