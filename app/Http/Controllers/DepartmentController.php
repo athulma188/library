@@ -67,6 +67,7 @@ class DepartmentController extends Controller
           {
               try{
               DB::table('AuthorizedProfessor')->where('dept_id', $request->dept_id)->update(['prof_id'=>$request->prof_id]);
+              return redirect()->action('DepartmentController@set_authorized_professor')->withSuccess('Authorized Professor has been set!');
               }
               catch(QueryException $ex)
               {
@@ -85,6 +86,7 @@ class DepartmentController extends Controller
                   return redirect()->back()->withErrors([($ex->getMessage())]);
               }
           }
+
 
       }
       public function view_authorized_professors()

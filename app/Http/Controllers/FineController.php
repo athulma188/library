@@ -10,12 +10,14 @@ class FineController extends Controller
       public function view_unsettled_fine()
       {
         $det = DB::table('Fine')->where('status','unsettled')->get();
-        return view('view_fine',compact('det'));
+        $nam = "Unsettled";
+        return view('view_fine',compact('det','nam'));
       }
       public function view_settled_fine()
       {
         $det = DB::table('Fine')->where('status','settled')->get();
-        return view('view_fine',compact('det'));
+        $nam = "Settled";
+        return view('view_fine',compact('det','nam'));
       }
       public function settle(Request $request)
       {

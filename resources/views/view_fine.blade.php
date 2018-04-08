@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
           <div class="card">
-              <div class="card-heading" align=center><h3>Fines</h3></div>
+              <div class="card-heading" align=center><h3>{{$nam}} Fines</h3></div>
               <div class="card-body">
                 <div class="table-bordered">
                 <table class="table">

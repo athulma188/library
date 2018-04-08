@@ -35,7 +35,7 @@
                             </div>
                       </div>
                     </div>
-                      <button type="submit" style="float:right" class="btn btn-default">A</button>
+                      <button type="submit" style="float:right" class="btn btn-default">Add</button>
                   </form>
               </div>
         </div>
